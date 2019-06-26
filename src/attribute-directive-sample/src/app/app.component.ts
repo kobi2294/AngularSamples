@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'attribute-directive-sample';
+
+  onHighlightTrigger(color: string) {
+    console.log('highlight was triggered in color ' + color);
+  }
 }
