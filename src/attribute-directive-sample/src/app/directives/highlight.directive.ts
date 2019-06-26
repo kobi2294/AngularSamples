@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2, OnInit, Input, HostListener } from '@angular/core';
+import { Directive, ElementRef, Renderer2, OnInit, Input, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
@@ -6,20 +6,15 @@ import { Directive, ElementRef, Renderer2, OnInit, Input, HostListener } from '@
 export class HighlightDirective {
   @Input() color: string = 'yellow';
 
-  constructor(
-    private renderer: Renderer2, 
-    private elem: ElementRef) {}
+  @HostBinding('style.background-color') myBackgroundColor: string;
 
-    @HostListener('mouseenter') onMouseOver() {
-      this.renderer.setStyle(this.elem.nativeElement, 
-        'background-color', this.color);  
-    }
+  @HostListener('mouseenter') onMouseOver() {
+    this.myBackgroundColor = this.color;
+  }
 
-    @HostListener('mouseleave') onMouseOut() {
-      this.renderer.setStyle(this.elem.nativeElement, 
-        'background-color', '');  
-    }
-
+  @HostListener('mouseleave') onMouseOut() {
+    this.myBackgroundColor = '';
+  }
 }
 
 
