@@ -1,19 +1,25 @@
-import { Directive, ElementRef, Renderer2, OnInit, Input } from '@angular/core';
+import { Directive, ElementRef, Renderer2, OnInit, Input, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
 })
-export class HighlightDirective implements OnInit{
-  @Input() color: string;
+export class HighlightDirective {
+  @Input() color: string = 'yellow';
 
   constructor(
     private renderer: Renderer2, 
     private elem: ElementRef) {}
 
-  ngOnInit(): void {
-    this.renderer.setStyle(this.elem.nativeElement, 
-      'background-color', this.color);
-  }
+    @HostListener('mouseenter') onMouseOver() {
+      this.renderer.setStyle(this.elem.nativeElement, 
+        'background-color', this.color);  
+    }
+
+    @HostListener('mouseleave') onMouseOut() {
+      this.renderer.setStyle(this.elem.nativeElement, 
+        'background-color', '');  
+    }
+
 }
 
 
