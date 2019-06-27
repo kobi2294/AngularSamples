@@ -1,0 +1,18 @@
+<div>
+  Current condition = {{isShowingMessage}}
+  <button (click)="toggle()">Toggle!</button>
+</div>
+
+<div *appIf="isShowingMessage">
+  <h1>Message is showing!</h1>
+</div>
+
+<button (click)="resetItems()">Reset Items</button> 
+<button (click)="addItem()">Add Item</button>
+<button (click)="moveItem()">Move</button>
+
+<div *appFor="let i of items">
+  {{i}}
+</div>
+
+
