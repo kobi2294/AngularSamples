@@ -1,0 +1,16 @@
+<h1>Hello Templates</h1>
+
+<ng-template #myTemplate let-caption="header" let-bottom="footer" let-body>  
+  <hr>
+  <h3>The caption is {{caption}}</h3>
+  <div>body: {{body}}</div>
+  <h4>The final word is: {{bottom}}</h4>
+  <hr>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="myTemplate;context:ctx1">  
+</ng-container>
+
+<ng-container *ngTemplateOutlet="myTemplate;context:ctx2">  
+</ng-container>
+
