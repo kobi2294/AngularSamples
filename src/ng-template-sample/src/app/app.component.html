@@ -1,17 +1,28 @@
-<ng-template #colorTemplate let-item>
-  <div [style.color]="item">{{item}}</div>
+<app-repeater [data]="['red', 'green', 'blue']">
+  <ng-template let-item>
+    <div [style.color]="item">{{item}}</div>
+  </ng-template>
+</app-repeater>
+
+<hr>
+
+<app-repeater [data]="['Arial', 'Tahoma', 'David', 'Consolas']">
+  <ng-template let-item>
+    <div [style.font-family]="item">{{item}}</div>
+  </ng-template>
+</app-repeater>
+
+
+<div *ngIf="condition">Hello World</div>
+
+<ng-template [ngIf]="condition">
+  <div>Hello World</div>
 </ng-template>
 
-<ng-template #fontTemplate let-item>
-  <div [style.font-family]="item">{{item}}</div>
+
+<div *ngFor="let item of items">{{item}}</div>
+
+<ng-template ngFor let-item [ngForOf]="items">
+  <div>{{item}}</div>
 </ng-template>
 
-<app-repeater 
-    [data]="['red', 'green', 'blue']" 
-    [template]="colorTemplate"></app-repeater>  
-
-  <hr>
-  
-<app-repeater 
-  [data]="['Arial', 'Tahoma', 'David', 'Consolas']" 
-  [template]="fontTemplate"></app-repeater>

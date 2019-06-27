@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   ctx1 = {$implicit: 'And how are you', header: 'Hello', footer: 'World'};
   ctx2 = {$implicit: 'day of week', header: 'Sunday', footer: 'Monday'};
+  condition = true;
+  items = ['One', 'Two', 'Thress'];
 }

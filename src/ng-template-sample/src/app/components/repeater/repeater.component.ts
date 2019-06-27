@@ -1,18 +1,13 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, Input, TemplateRef, ContentChild } from '@angular/core';
 
 @Component({
   selector: 'app-repeater',
   templateUrl: './repeater.component.html',
   styleUrls: ['./repeater.component.css']
 })
-export class RepeaterComponent implements OnInit {
+export class RepeaterComponent {
   @Input() data: string[];
 
-  @Input() template: TemplateRef<any>;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  @ContentChild(TemplateRef, {static: false}) 
+  template: TemplateRef<any>;
 }
