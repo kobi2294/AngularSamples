@@ -1,0 +1,15 @@
+div {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 8px;
+    padding: 4px;
+}
+
+div:hover {
+    background: lightgoldenrodyellow;
+}
+
+div.selected {
+    background: yellow;
+}

@@ -1,0 +1,6 @@
+<div *ngFor="let item of options" 
+    [class.selected]="item === selected"
+    (click)="onSelection(item)"
+    >
+    <ng-container *ngTemplateOutlet="template; context: {$implicit:item}"></ng-container>
+</div>
