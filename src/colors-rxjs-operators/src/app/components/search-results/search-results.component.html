@@ -1,0 +1,8 @@
+<div 
+    *ngFor="let color of (searchResults$ | async)"
+    [style.background-color]="color.code"
+    >
+    {{color.displayName}}
+</div>
+
+
