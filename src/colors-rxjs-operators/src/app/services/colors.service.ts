@@ -13,6 +13,7 @@ export class ColorsService {
   }
 
   async searchColors(filter: string): Promise<ColorModel[]> {
+    console.log(`starting search for ${filter}`)
     filter = filter.toLowerCase();
     const entries = Object.entries(ALLCOLORS);
     const res = entries
@@ -20,6 +21,7 @@ export class ColorsService {
       .filter(color => color.displayName.toLowerCase().includes(filter))
       
     await this.delay(3000);
+    console.log(`completed search for ${filter}`)
     return res;
   }
 }
