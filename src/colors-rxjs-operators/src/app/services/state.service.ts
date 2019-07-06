@@ -22,6 +22,12 @@ export class StateService {
       debounceTime(1000),
       switchMap(keyword => this.colorsService.searchColors(keyword))
       );
+      
+    const true$ = this.filter$.pipe(map(val => true));
+    const false$ = this.searchResults$.pipe(map(val => false));
+    this.isBusy$ = merge(true$, false$)
+                    .pipe(distinctUntilChanged());
+
   }
 
 
