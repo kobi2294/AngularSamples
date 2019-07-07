@@ -26,7 +26,7 @@ export class TodoFormComponent implements OnInit {
       title: [''],
       work: [false],
       health: [false],
-      payments: [false],
+      payment: [false],
       completed: [false]
     });
   }
