@@ -7,13 +7,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './components/layout/layout.component';
-import { LayoutModule } from '@angular/cdk/layout';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/reducers/app.reducer';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { TodoDragDropComponent } from './components/todo-drag-drop/todo-drag-drop.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
     TodoFormComponent,
     TodoListComponent,
     TodoItemComponent,
+    TodoDragDropComponent,
   ],
   imports: [
     BrowserModule,
