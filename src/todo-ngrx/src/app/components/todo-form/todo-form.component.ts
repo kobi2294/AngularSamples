@@ -1,5 +1,9 @@
+import { AddTodoAction } from './../../store/actions/todos-data.action';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { AppState } from 'src/app/store/state/app.state';
+import { Store } from '@ngrx/store';
+import { Todo } from 'src/app/models/todo.model';
 
 @Component({
   selector: 'app-todo-form',
@@ -9,7 +13,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class TodoFormComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder, 
+    private store: Store<AppState>) { }
 
   ngOnInit() {
     this.initForm();
@@ -26,7 +32,8 @@ export class TodoFormComponent implements OnInit {
   }
 
   save() {
-    console.log(this.form.value);
+    let item = <Todo>this.form.value;    
+    this.store.dispatch(new AddTodoAction(item));
     this.initForm();
   }
 }

@@ -11,6 +11,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/reducers/app.reducer';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { StoreModule } from '@ngrx/store';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     BrowserAnimationsModule,
     FormsModule, ReactiveFormsModule, 
