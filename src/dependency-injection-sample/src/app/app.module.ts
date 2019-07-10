@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LogService } from './services/log.service';
 import { BASE_URL, CURRENT_DATE, getDate } from './models/app.config';
+import { ChildComponent } from './components/child/child.component';
+import { ParentComponent } from './components/parent/parent.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChildComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule
