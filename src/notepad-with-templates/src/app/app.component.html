@@ -1,22 +1,16 @@
 <app-string-selector [options]="colors" [selected]="selectedColor"
   (selection)="selectColor($event)">
-  <ng-template let-item>
-    <span [style.color]="item">{{item}}</span>
-  </ng-template>
+    <span *appOption="let item" [style.color]="item">{{item}}</span>
 </app-string-selector>
 
 <app-string-selector [options]="fonts" [selected]="selectedFont"
   (selection)="selectFont($event)">
-  <ng-template let-item>
-    <span [style.font-family]="item">{{item}}</span>
-  </ng-template>
+  <span *appOption="let item" [style.font-family]="item">{{item}}</span>
 </app-string-selector>
 
 <app-string-selector [options]="sizes" [selected]="selectedSize"
   (selection)="selectSize($event)">
-  <ng-template let-item>
-    <span [style.font-size]="item">{{item}}</span>
-  </ng-template>
+  <span *appOption="let item" [style.font-size]="item">{{item}}</span>
 </app-string-selector>
 
 <textarea

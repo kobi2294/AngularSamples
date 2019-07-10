@@ -2,5 +2,5 @@
     [class.selected]="item === selected"
     (click)="onSelection(item)"
     >
-    <ng-container *ngTemplateOutlet="template; context: {$implicit:item}"></ng-container>
+    <ng-container *ngTemplateOutlet="optionTemplate?.template; context: {$implicit:item}"></ng-container>
 </div>
