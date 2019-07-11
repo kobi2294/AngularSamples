@@ -1,0 +1,6 @@
+<div *ngIf="(color$ | async) as color"
+    [style.background-color]="color.code"
+    >
+    <h1>{{color.displayName}}</h1>
+    <h2>{{color.code}}</h2>
+</div>

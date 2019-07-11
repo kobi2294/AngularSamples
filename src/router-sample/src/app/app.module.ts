@@ -3,14 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ColorsModule } from './colors/colors.module';
+import { StateModule } from './state/state.module';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ColorsModule,
+    StateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

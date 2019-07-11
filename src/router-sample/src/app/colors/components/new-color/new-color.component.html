@@ -1,0 +1,7 @@
+<div>
+    <form novalidate [formGroup]="form">
+        <input type="text" formControlName="displayName">
+        <input type="color" formControlName="code">
+        <button (click)="save()" [disabled]="form.invalid">Save</button>
+    </form>
+</div>
