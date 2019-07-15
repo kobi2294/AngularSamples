@@ -1,0 +1,8 @@
+<div class="item" *ngFor="let color of (colors$ | async)"
+    [style.background-color]="color.code">
+    {{color.displayName}}
+    <a [routerLink]="['/colors', color.displayName]">View</a>
+</div>
+
+<router-outlet></router-outlet>
+

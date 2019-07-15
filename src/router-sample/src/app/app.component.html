@@ -1,0 +1,15 @@
+<div class="navbar">
+    <a routerLink="colors" routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact:true}">Colors List</a>
+    <a routerLink="swatches" routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact:true}">Swatches List</a>
+    <a routerLink="colors/new" routerLinkActive="active">New Color</a>
+    <a [routerLink]="[{outlets: {info: ['happy']}}]" routerLinkActive="active">Happy</a>
+    <a [routerLink]="[{outlets: {info: ['content']}}]" routerLinkActive="active">Content</a>
+</div>
+
+<router-outlet></router-outlet>
+<div class="info">
+    <h4>Info!</h4>
+    <router-outlet name="info"></router-outlet>
+</div>

@@ -1,0 +1,21 @@
+div.navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    background: lightcyan;
+    padding: 10px;
+    text-decoration: none;
+    color: darkcyan;
+}
+
+a.active {
+    background: darkcyan;
+    color: lightcyan;
+}
+
+.info {
+    min-height: 100px;
+    border: 1px solid gray;
+}

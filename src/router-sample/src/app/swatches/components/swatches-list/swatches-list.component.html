@@ -1,0 +1,10 @@
+<div class="item" *ngFor="let swatch of (swatches$ | async)">
+    {{swatch.displayName}}
+    <div class="colors">
+        <div class="color" *ngFor="let color of swatch.colors" 
+            [style.background-color]="color.code">
+            {{color.displayName}}
+        </div>
+    </div>
+</div>
+
