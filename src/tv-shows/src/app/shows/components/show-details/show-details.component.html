@@ -1,0 +1,13 @@
+<div class="root">
+    <div class="tools" *ngIf="(index | async) as i">
+            <button (click)="go(i-1)">Prev</button>
+            <button (click)="go(i+1)">Next</button>
+    </div>
+
+    <div *ngIf="(show | async) as s" class="show">
+        <h1 class="show-title">{{s.name}}</h1>
+        <img class="show-image" [src]="s.image.original">
+        <p class="show-summary" [innerHTML]="s.summary"></p>
+    </div>
+
+</div>

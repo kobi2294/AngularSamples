@@ -1,0 +1,29 @@
+main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+  }
+
+  ul {
+    margin: 0px;
+    padding: 20px;
+  }
+
+  li {
+    list-style: none;
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 4px;
+    cursor: pointer;
+  }
+
+  li.odd {
+    background: rgba(251, 251, 200, 0.308);
+  }
+  
+  li:hover {
+    background: rgba(185, 227, 255, 0.3);
+  }
+  
+  

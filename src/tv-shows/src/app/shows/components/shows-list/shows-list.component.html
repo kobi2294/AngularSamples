@@ -1,0 +1,8 @@
+<main>
+    <ul>
+        <li *ngFor="let show of shows; let odd = odd; let index = index" 
+            [class.odd]="odd" (click)="select(index)">
+            {{index+1}}. {{show.name}}
+        </li>
+    </ul>
+</main>

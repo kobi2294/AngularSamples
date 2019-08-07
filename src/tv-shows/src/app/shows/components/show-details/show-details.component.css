@@ -1,0 +1,39 @@
+img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+  
+  .tools {
+    padding: 30px;
+  }
+  
+  .root {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  
+  .show {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  
+  .show-title {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  
+  .show-image {
+    grid-row: 1/span 2;
+    grid-column: 1;
+    padding: 20px;
+  }
+  
+  .show-summary {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  
