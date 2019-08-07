@@ -2,11 +2,14 @@ import { ShowDetailsComponent } from './components/show-details/show-details.com
 import { ShowsListComponent } from './components/shows-list/shows-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ShowsHomeComponent } from './components/shows-home/shows-home.component';
 
 
 const routes: Routes = [
-  {path: 'shows', component: ShowsListComponent}, 
-  {path: 'shows/:mispar', component: ShowDetailsComponent}
+  {path: 'shows', component: ShowsHomeComponent, children: [
+    {path: '', component: ShowsListComponent}, 
+    {path: ':mispar', component: ShowDetailsComponent}
+  ]}
 ];
 
 @NgModule({
