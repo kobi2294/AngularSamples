@@ -1,7 +1,7 @@
-import { Nextepisode } from './next-episode-model';
+import { Episode } from './episode.model';
 
 export interface Links {
-    self:            Nextepisode;
-    previousepisode: Nextepisode;
-    nextepisode?:    Nextepisode;
+    self:            Episode;
+    previousepisode: Episode;
+    nextepisode?:    Episode;
 }

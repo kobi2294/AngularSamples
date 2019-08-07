@@ -1,4 +1,9 @@
 import { Links } from './Links.model';
+import { Externals } from './externals.model';
+import { Image } from './image.model';
+import { Network } from './network.model';
+import { Schedule } from './schedule.model';
+import { Rating } from './rating.model';
 
 export interface Show {
     id:           number;
@@ -21,36 +26,4 @@ export interface Show {
     summary:      string;
     updated:      number;
     _links:       Links;
-}
-
-export interface Externals {
-    tvrage:  number;
-    thetvdb: number | null;
-    imdb:    null | string;
-}
-
-export interface Image {
-    medium:   string;
-    original: string;
-}
-
-export interface Network {
-    id:      number;
-    name:    string;
-    country: Country | null;
-}
-
-export interface Country {
-    name:     string;
-    code:     string;
-    timezone: string;
-}
-
-export interface Rating {
-    average: number | null;
-}
-
-export interface Schedule {
-    time: string;
-    days: string[];
 }
