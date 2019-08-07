@@ -7,11 +7,14 @@ import { ShowDetailsComponent } from './components/show-details/show-details.com
 
 
 @NgModule({
-  declarations: [ShowsListComponent, ShowDetailsComponent],
+  declarations: [
+    ShowsListComponent, 
+    ShowDetailsComponent
+  ],
   imports: [
     CommonModule,
     ShowsRoutingModule
   ], 
-  exports: [ShowsListComponent]
+  exports: []
 })
 export class ShowsModule { }

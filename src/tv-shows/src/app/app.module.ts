@@ -10,7 +10,6 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ShowsModule } from './shows/shows.module';
-import { ShowDetailsComponent } from './shows/components/show-details/show-details.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +17,13 @@ import { ShowDetailsComponent } from './shows/components/show-details/show-detai
     HomeComponent,
     AboutComponent,
     NotFoundComponent, 
-    ShowsListComponent, 
-    ShowDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     CoreModule, 
     HttpClientModule, 
+    ShowsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
