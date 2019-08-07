@@ -1,3 +1,5 @@
+import { Links } from './Links.model';
+
 export interface Show {
     id:           number;
     url:          string;
@@ -19,16 +21,6 @@ export interface Show {
     summary:      string;
     updated:      number;
     _links:       Links;
-}
-
-export interface Links {
-    self:            Nextepisode;
-    previousepisode: Nextepisode;
-    nextepisode?:    Nextepisode;
-}
-
-export interface Nextepisode {
-    href: string;
 }
 
 export interface Externals {
