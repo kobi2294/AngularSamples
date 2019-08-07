@@ -1,0 +1,17 @@
+<div class="root">
+    <div class="tools" *ngIf="(index$ | async) as i">
+        <button (click)="goToDetails(i)">Back</button>
+    </div>
+
+    <div *ngIf="(show$ | async) as s" class="show">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" [value]="s.name">
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea [value]="s.summary"></textarea>
+        </div>
+    </div>
+
+</div>

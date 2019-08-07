@@ -11,8 +11,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./show-details.component.css']
 })
 export class ShowDetailsComponent implements OnInit {
-  show: Observable<Show>;
-  index: Observable<number>;
+  show$: Observable<Show>;
+  index$: Observable<number>;
 
   constructor(
     private data: DataService, 
@@ -20,17 +20,21 @@ export class ShowDetailsComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   async ngOnInit() {
-    this.index = this.route.params.pipe(
+    this.index$ = this.route.params.pipe(
       map(prm => Number(prm['mispar']))
     );
 
-    this.show = this.index.pipe(
+    this.show$ = this.index$.pipe(
       switchMap(index => this.data.getShowDetails(index))
     )
   }
 
   go(index: number) {
     this.router.navigate(['shows', index]);
+  }
+
+  goEdit(index: number) {
+    this.router.navigate(['shows', index, 'edit']);
   }
 
 }

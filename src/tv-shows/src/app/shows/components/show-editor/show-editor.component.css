@@ -1,0 +1,41 @@
+.field {
+    margin: 6px 20px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+}
+
+input {
+    background: rgba(245, 249, 250, 0.2);
+    width: 400px;
+    border: 0px;
+    border-bottom: 1px solid rgba(129, 182, 199, 0.3);
+    padding: 8px;
+    font-size: 18;
+    color: darkblue;
+}
+
+input:focus {
+    background: rgba(245, 249, 250, 1);
+    border-bottom: 1px solid rgba(129, 182, 199, 1);
+    outline: 0px;
+}
+
+textarea {
+    background: rgb(245, 249, 250, 0.2);
+    width: 400px;
+    border: 0px;
+    border-bottom: 1px solid rgba(129, 182, 199, 0.3);
+    padding: 8px;
+    font-size: 12px;
+    color: darkblue;
+    min-height: 200px;
+}
+
+textarea:focus {
+    background: rgba(245, 249, 250, 1);
+    border-bottom: 1px solid rgba(129, 182, 199, 1);
+    outline: 0px;
+}
