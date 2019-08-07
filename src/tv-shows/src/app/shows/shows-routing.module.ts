@@ -1,3 +1,4 @@
+import { AuthenticationGuard } from './../core/guards/authentication.guard';
 import { ShowDetailsComponent } from './components/show-details/show-details.component';
 import { ShowsListComponent } from './components/shows-list/shows-list.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,7 @@ const routes: Routes = [
   {path: '', component: ShowsHomeComponent, children: [
     {path: '', component: ShowsListComponent}, 
     {path: ':mispar', component: ShowDetailsComponent}, 
-    {path: ':mispar/edit', component: ShowEditorComponent}
+    {path: ':mispar/edit', component: ShowEditorComponent, canActivate: [AuthenticationGuard]}
   ]}
 ];
 
