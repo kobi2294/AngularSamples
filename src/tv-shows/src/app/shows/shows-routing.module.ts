@@ -6,7 +6,7 @@ import { ShowsHomeComponent } from './components/shows-home/shows-home.component
 
 
 const routes: Routes = [
-  {path: 'shows', component: ShowsHomeComponent, children: [
+  {path: '', component: ShowsHomeComponent, children: [
     {path: '', component: ShowsListComponent}, 
     {path: ':mispar', component: ShowDetailsComponent}
   ]}

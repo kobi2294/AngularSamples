@@ -22,7 +22,6 @@ import { ShowsModule } from './shows/shows.module';
     BrowserModule,
     CoreModule, 
     HttpClientModule, 
-    ShowsModule,
     AppRoutingModule, 
   ],
   providers: [],
