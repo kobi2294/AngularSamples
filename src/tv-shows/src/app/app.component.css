@@ -39,4 +39,8 @@ main {
     background: rgb(121, 131, 163);
     color: white;
   }
+
+  nav .empty-space {
+    flex:1;
+  }
   

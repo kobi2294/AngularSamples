@@ -4,6 +4,11 @@
         <div class="nav-item" routerLinkActive="current" routerLink="about">About</div>
         <div class="nav-item" routerLinkActive="current" routerLink="shows">Shows</div>
         <div class="nav-item" routerLinkActive="current" routerLink="account">Account</div>
+
+        <div class="empty-space"></div>
+
+        <div *ngIf="(isLoggedIn$ | async)">Logged In</div>
+        <div *ngIf="!(isLoggedIn$ | async)">Logged Out</div>
     </nav>
     <div class="main-area">
         <router-outlet></router-outlet>
