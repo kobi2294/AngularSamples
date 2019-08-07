@@ -20,10 +20,10 @@ import { ShowsModule } from './shows/shows.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
     CoreModule, 
     HttpClientModule, 
-    ShowsModule
+    ShowsModule,
+    AppRoutingModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
