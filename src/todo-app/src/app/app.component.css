@@ -1,3 +1,14 @@
 :host {
     display: grid;
 }
+
+
+.material-icons {
+    color: var(--p500);
+    margin: 4px;
+}
+
+.material-icons.invert {
+    color: white;
+    background-color: var(--a700);
+}
