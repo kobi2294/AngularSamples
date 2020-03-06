@@ -1,14 +1,39 @@
 :host {
     display: grid;
+    grid-template-rows: auto auto 1fr;
 }
 
-
-.material-icons {
-    color: var(--p500);
-    margin: 4px;
-}
-
-.material-icons.invert {
+.title-area {
+    background-color: var(--p500);
     color: white;
-    background-color: var(--a700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+.navbar-area {
+    background-color: var(--p100);
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-area a {
+    color: var(--p900);
+    padding: 4px 8px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-area a:hover {
+    background-color: var(--p300);
+}
+
+.navbar-area a.current {
+    background-color: var(--p900);
+    color: var(--p100);
 }
