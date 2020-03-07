@@ -1,5 +1,5 @@
 import { StateService } from './../../core/services/state.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { TodoList } from 'src/app/core/models/todo-list.model';
 import { ActivatedRoute } from '@angular/router';
@@ -14,6 +14,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ListEditorComponent implements OnInit {
   list$: Observable<TodoList>;
   form: FormGroup;
+
+  private subs: Subscription[] = [];
 
   constructor(
     private state: StateService, 
@@ -32,11 +34,13 @@ export class ListEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-
     this.list$ = this.route.params.pipe(
       map(prm => Number(prm['id'])),
       switchMap(id => this.state.getTodoList(id))
+    );
+
+    this.subs.push(
+      this.list$.subscribe(list => this.form.reset(list))
     );
   }
 
