@@ -19,7 +19,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ListViewerComponent,
     ListEditorComponent,
     ItemsComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

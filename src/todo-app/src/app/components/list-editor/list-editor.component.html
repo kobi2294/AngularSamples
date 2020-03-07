@@ -2,10 +2,20 @@
     <div class="form-field">
         <label>Caption:</label>
         <input type="text" formControlName="caption">
-    </div>
+        <div class="errors" *ngIf="form.get('caption').errors as errs">
+            <div *ngIf="errs['required'] as err">required</div>
+        </div>
+    </div>    
     <div class="form-field">
         <label>Description:</label>
         <textarea formControlName="description"></textarea>
+        <div class="errors" *ngIf="form.get('description').errors as errs">
+            <div *ngIf="errs['required'] as err">required</div>
+            <div *ngIf="errs['counters'] as err">
+                Letters: {{err.chars}}/{{err.requiredChars}}, 
+                Words: {{err.words}}/{{err.requiredWords}}
+            </div>
+        </div>
     </div>
     <div class="form-field">
         <label>Icon:</label>
@@ -13,13 +23,17 @@
             <option value=""></option>
             <option *ngFor="let ic of icons" [value]="ic" class="material-icons">{{ic}}</option>
         </select>
+        <div class="errors" *ngIf="form.get('icon').errors as errs">
+            <div *ngIf="errs['required'] as err">required</div>
+        </div>
     </div>
     <div class="form-field">
         <label>Color:</label>
         <select formControlName="color" [style.color]="form.get('color').value">
             <option *ngFor="let col of colors" [value]="col" [style.color]="col">{{col}}</option>
         </select>
+        <div class="errors" *ngIf="form.get('icon').errors as errs">
+            <div *ngIf="errs['required'] as err">required</div>
+        </div>
     </div>
 </form>
-
-{{form.get('description').errors | json}}

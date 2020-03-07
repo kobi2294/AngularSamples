@@ -60,8 +60,8 @@ export class ListEditorComponent implements OnInit {
 
     if ((chars >= 30) && (words >= 10)) return null;
     return {counters: {
-      requiredLength: 30, 
-      length: chars, 
+      requiredChars: 30, 
+      chars: chars, 
       requiredWords: 10, 
       words: words
     }}
