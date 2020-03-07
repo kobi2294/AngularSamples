@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { TodoList } from 'src/app/core/models/todo-list.model';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-list-editor',
@@ -44,11 +44,30 @@ export class ListEditorComponent implements OnInit {
     this.form = this.fb.group({
       id: [-1], 
       caption: ['', Validators.required], 
-      description: [''], 
+      description: ['', ctrl => this.validateCounters(ctrl)], 
       icon: ['', Validators.required], 
       color: ['', Validators.required]
     });
   }
+
+  validateCounters(ctrl: AbstractControl): null | ValidationErrors {
+    let val: string = '';
+    if ((ctrl) && (typeof(ctrl.value)==='string')) 
+      val = <string>ctrl.value;
+
+    const chars = val.length;
+    const words = val.split(' ').filter(s => s).length;
+
+    if ((chars >= 30) && (words >= 10)) return null;
+    return {counters: {
+      requiredLength: 30, 
+      length: chars, 
+      requiredWords: 10, 
+      words: words
+    }}
+  }
+
+
 
   ngOnInit(): void {
     this.buildForm();
