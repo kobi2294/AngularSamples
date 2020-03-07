@@ -14,6 +14,23 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ListEditorComponent implements OnInit {
   list$: Observable<TodoList>;
   form: FormGroup;
+  icons = [
+    'shopping_cart', 
+    'stars', 
+    'today', 
+    'work', 
+    'call', 
+    'flag'
+  ]; 
+  colors = [
+    'red', 
+    'blue', 
+    'green', 
+    'steelblue', 
+    'magenta', 
+    'brown', 
+    'orange'
+  ]
 
   private subs: Subscription[] = [];
 
@@ -34,6 +51,7 @@ export class ListEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.buildForm();
     this.list$ = this.route.params.pipe(
       map(prm => Number(prm['id'])),
       switchMap(id => this.state.getTodoList(id))

@@ -1,1 +1,23 @@
-<p>list-editor works!</p>
+<form [formGroup]="form">
+    <div class="form-field">
+        <label>Caption:</label>
+        <input type="text" formControlName="caption">
+    </div>
+    <div class="form-field">
+        <label>Description:</label>
+        <textarea formControlName="description"></textarea>
+    </div>
+    <div class="form-field">
+        <label>Icon:</label>
+        <select formControlName="icon" class="material-icons">
+            <option value=""></option>
+            <option *ngFor="let ic of icons" [value]="ic" class="material-icons">{{ic}}</option>
+        </select>
+    </div>
+    <div class="form-field">
+        <label>Color:</label>
+        <select formControlName="color" [style.color]="form.get('color').value">
+            <option *ngFor="let col of colors" [value]="col" [style.color]="col">{{col}}</option>
+        </select>
+    </div>
+</form>
