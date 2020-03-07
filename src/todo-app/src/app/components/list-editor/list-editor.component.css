@@ -37,6 +37,11 @@ input, select, textarea {
     padding-left: 10px;
 }
 
+input:focus, select:focus, textarea:focus {
+    border: 1px solid var(--p900);
+    color: var(--p400);
+}
+
 .ng-untouched + .errors {
     display: none;
 }
@@ -48,5 +53,28 @@ input, select, textarea {
 .errors div {
     color: red;
     font-size: 12px;
+}
+
+button {
+    align-self: flex-end;
+    border-radius: 5px;
+    min-width: 100px;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid var(--a400);
+    background-color: var(--a100);
+    color: var(--a700);
+    cursor: pointer;
+    outline: transparent;
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: unset;
+}
+
+button:enabled:hover {
+    background-color: var(--a400);
+    color: var(--a100);
 }
 
