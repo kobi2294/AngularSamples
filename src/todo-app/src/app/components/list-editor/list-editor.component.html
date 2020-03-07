@@ -36,8 +36,5 @@
             <div *ngIf="errs['required'] as err">required</div>
         </div>
     </div>
-    <button [disabled]="form.invalid" >Save</button>
+    <button (click)="save()" [disabled]="form.invalid || form.pristine" >Save</button>
 </form>
-
-<hr>
-<pre>{{form.value | json}}</pre>

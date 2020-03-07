@@ -8,7 +8,15 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class StateService {
-  private lists: TodoList[] = [];
+  private lists: TodoList[] = [
+    {
+      id: 1, 
+      caption:' Shopping', 
+      description: 'Things to buy on our next stop to the supermarket', 
+      icon: 'shopping_cart',
+      color: 'blue'
+    }
+  ];
   private items: TodoItem[] = [];
   private runningId: number = 0;
   

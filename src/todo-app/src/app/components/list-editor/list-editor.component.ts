@@ -2,8 +2,8 @@ import { StateService } from './../../core/services/state.service';
 import { Observable, Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { TodoList } from 'src/app/core/models/todo-list.model';
-import { ActivatedRoute } from '@angular/router';
-import { map, switchMap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -37,7 +37,8 @@ export class ListEditorComponent implements OnInit {
   constructor(
     private state: StateService, 
     private route: ActivatedRoute, 
-    private fb: FormBuilder
+    private fb: FormBuilder, 
+    private router: Router
     ) { }
 
   buildForm() {
@@ -67,6 +68,18 @@ export class ListEditorComponent implements OnInit {
     }}
   }
 
+  async save() {
+    const list = <TodoList>this.form.value;
+    let id = list.id;
+    if (id) {
+      await this.state.modifyList(list);
+    } else {
+      id = await this.state.addList(list.caption, list.description, list.color, list.icon);
+    }
+
+    this.router.navigate(['lists', id]);
+
+  }
 
 
   ngOnInit(): void {
@@ -77,7 +90,8 @@ export class ListEditorComponent implements OnInit {
     );
 
     this.subs.push(
-      this.list$.subscribe(list => this.form.reset(list))
+      this.list$.pipe(tap(console.log))
+      .subscribe(list => this.form.reset(list))
     );
   }
 
