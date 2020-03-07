@@ -12,6 +12,11 @@
     padding: 8px;
 }
 
+.main-area {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
 h1 {
     font-size: 36px;
 }
