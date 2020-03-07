@@ -1,11 +1,12 @@
 :host {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 form {
+    justify-self: center;
+    align-self: flex-start;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     padding: 20px;
