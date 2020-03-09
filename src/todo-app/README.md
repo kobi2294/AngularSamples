@@ -52,6 +52,7 @@ In this step we will create the main application layout and navigation. We will 
     - Lists
     - Items
     - Use CSS to layout the toolbar and the main area so that they nicely fit the entire page and look nicely
+- Implement the home page. Present the app name, developer, todays date, total todo items, total uncompleted todo items, and a button that navigates to create a new list `lists/-1/edit`
 
 ### Step 4 - Edit List
 In this step we will implement the edit list view. This view is actually used for 2 purposes. To add a new list, or to modify an existing one. This view gets a list-id parameter in the url, so if the id is -1, it will mean that we are working on a new list. If it is above 0, it means that we are working on an existing list.
@@ -83,6 +84,10 @@ In this step we will present the list viewer page. It will present all the list 
 - Use operators to create another observable of `TodoItem[]`s that belong to the list
 - Present the caption, description, image
 - The caption should be in the color of the list
+- Add 3 buttons and navigate properly
+    - Create New List
+    - Delete list
+    - Edit list details
 - Add a todo-item-presenter component
     - It will get 2 inputs: `caption`, `isCompleted`
     - Present the caption.
