@@ -124,8 +124,10 @@ export class StateService {
   }
 
   async deleteList(listId: number) {
-    this.lists = this.lists.filter(l => l.id !== listId);    
+    this.lists = this.lists.filter(l => l.id !== listId);  
+    this.items = this.items.filter(i => i.listId !== listId);  
     this.notifyLists();
+    this.notifyItems();
   }
 
   async markAsCompleted(itemId) {

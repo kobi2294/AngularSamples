@@ -1,0 +1,31 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-data {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+p {
+    order: 2;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.material-icons {
+    order: 1;
+    font-size: 72px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+button {
+    margin: 10px;
+}

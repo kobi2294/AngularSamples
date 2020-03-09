@@ -1,5 +1,5 @@
 import { StateService } from './../../core/services/state.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { TodoList } from 'src/app/core/models/todo-list.model';
 import { TodoItem } from 'src/app/core/models/todi-item.model';
@@ -34,6 +34,21 @@ export class ListViewerComponent implements OnInit {
     this.items$ = this.listId$.pipe(
       switchMap(id => this.state.getItemsInList(id))
     )
+  }
+
+  async deleteList() {
+    let id = Number(this.route.snapshot.params['id']);
+    await this.state.deleteList(id);
+    this.router.navigate(['lists']);
+  }
+
+  async editList() {
+    let id = Number(this.route.snapshot.params['id']);
+    this.router.navigate(['lists', id, 'edit']);
+  }
+
+  async createNewList() {
+    this.router.navigate(['lists', -1, 'edit']);
   }
 
 }
