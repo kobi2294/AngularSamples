@@ -89,6 +89,21 @@ button.accent:enabled:hover {
     color: var(--a100);
 }
 
+input, select, textarea {
+    outline: transparent;
+    border: 1px solid var(--p200);
+    color: var(--p200);
+    font-size: 20px;
+    padding: 4px;
+    padding-left: 10px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 1px solid var(--p900);
+    color: var(--p400);
+}
+
+
 
 .fancy-shadow {
     position: relative;

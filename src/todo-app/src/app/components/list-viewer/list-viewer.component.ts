@@ -1,3 +1,4 @@
+import { CoreValidators } from './../../core/validations/core-validators';
 import { StateService } from './../../core/services/state.service';
 import { Observable, Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
@@ -5,6 +6,7 @@ import { TodoList } from 'src/app/core/models/todo-list.model';
 import { TodoItem } from 'src/app/core/models/todi-item.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-list-viewer',
@@ -17,6 +19,7 @@ export class ListViewerComponent implements OnInit {
   items$: Observable<TodoItem[]>;
 
   isConfirmingDelete: boolean = false;
+  newLine = new FormControl('', CoreValidators.counters(10, 3));
 
   constructor(
     private state: StateService, 
@@ -64,5 +67,12 @@ export class ListViewerComponent implements OnInit {
   async markAsCompleted(itemId: number) {
     await this.state.markAsCompleted(itemId);
   }
+
+  async addItem() {
+    let listId = Number(this.route.snapshot.params['id']);
+    await this.state.addItem(listId, this.newLine.value);
+    this.newLine.reset();
+  }
+
 
 }

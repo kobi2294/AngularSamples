@@ -61,3 +61,25 @@ button {
     flex-direction: column;
     margin-left: 20px;
 }
+
+.add-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.add-item input {
+    width: 20em;
+}
+
+.add-item .material-icons {
+    color: var(--p300);
+    margin: 4px;
+    font-size: 36px;
+    align-self: center;
+}
+
+.add-item button {
+    min-width: unset;
+}

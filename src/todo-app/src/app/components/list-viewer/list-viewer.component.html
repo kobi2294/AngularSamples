@@ -23,3 +23,11 @@
             (completed)="markAsCompleted(item.id)"></app-todo-item-presenter>
     </div>
 </ng-container>
+<div class="add-item">
+    <span class="material-icons">crop_square</span>
+    <input type="text" #addline [formControl]="newLine">
+    <button class="primary" 
+        [disabled]="newLine.invalid"
+        (click)="addItem()"
+        >+</button>
+</div>

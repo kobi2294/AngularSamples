@@ -1,3 +1,4 @@
+import { CoreValidators } from './../../core/validations/core-validators';
 import { StateService } from './../../core/services/state.service';
 import { Observable, Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
@@ -45,27 +46,10 @@ export class ListEditorComponent implements OnInit {
     this.form = this.fb.group({
       id: [-1], 
       caption: ['', Validators.required], 
-      description: ['', ctrl => this.validateCounters(ctrl)], 
+      description: ['', CoreValidators.counters(30, 10)], 
       icon: ['', Validators.required], 
       color: ['', Validators.required]
     });
-  }
-
-  validateCounters(ctrl: AbstractControl): null | ValidationErrors {
-    let val: string = '';
-    if ((ctrl) && (typeof(ctrl.value)==='string')) 
-      val = <string>ctrl.value;
-
-    const chars = val.length;
-    const words = val.split(' ').filter(s => s).length;
-
-    if ((chars >= 30) && (words >= 10)) return null;
-    return {counters: {
-      requiredChars: 30, 
-      chars: chars, 
-      requiredWords: 10, 
-      words: words
-    }}
   }
 
   async save() {
