@@ -34,7 +34,7 @@
 }
 
 .counter {
-    margin: 40px;
+    margin: 56px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,17 +42,16 @@
 
 .counter .material-icons {
     color: var(--p500);
-    font-size: 48px;
+    font-size: 42px;
 }
 
 .counter .caption {
-    font-size: 24px;
+    font-size: 18px;
+    color: var(--p300);
 }
 
 .counter .data {
-    font-weight: bold;
-    font-size: 36px;
-    color: var(--p300);
+    font-size: 48px;
 }
 
 button {
