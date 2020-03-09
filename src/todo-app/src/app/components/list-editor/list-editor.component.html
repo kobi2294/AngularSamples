@@ -33,7 +33,7 @@
         <select formControlName="color" [style.color]="form.get('color').value">
             <option *ngFor="let col of colors" [value]="col" [style.color]="col">{{col}}</option>
         </select>
-        <div class="errors" *ngIf="form.get('icon').errors as errs">
+        <div class="errors" *ngIf="form.get('color').errors as errs">
             <div *ngIf="errs['required'] as err">required</div>
         </div>
     </div>
