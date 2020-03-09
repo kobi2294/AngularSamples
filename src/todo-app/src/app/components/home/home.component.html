@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="app-name">{{application}}</div>
+<div class="developer">by {{developer}}</div>
+<div class="date">{{today | date:'dd/MM/yyyy'}}</div>
+<div class="todos">
+    You have
+    <span class="uncompleted">{{uncompletedCount$ | async}}</span>
+    uncompleted items, out of total of
+    <span class="total">{{itemsCount$ | async}}</span> 
+    items
+</div>
+
+<div>
+    <button (click)="navigateToNew()">Create new List</button>    
+</div>

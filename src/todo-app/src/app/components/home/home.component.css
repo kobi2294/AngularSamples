@@ -1,0 +1,58 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.app-name {
+    font-size: 40px;
+    color: var(--p400);
+}
+
+.developer {
+    font-size: 32px;
+    color: var(--p700);
+}
+
+.date {
+    font-size: 24px;
+    color: var(--a700);
+}
+
+.todos {
+    font-size: 32px;
+    margin-top: 40px;    
+}
+
+.uncompleted {
+    color: var(--a400);
+}
+
+.total {
+    color: var(--p500);
+}
+
+button {
+    align-self: flex-end;
+    border-radius: 5px;
+    min-width: 100px;
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 20px;
+    border: 1px solid var(--a400);
+    background-color: var(--a100);
+    color: var(--a700);
+    cursor: pointer;
+    outline: transparent;
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: unset;
+}
+
+button:enabled:hover {
+    background-color: var(--a400);
+    color: var(--a100);
+}

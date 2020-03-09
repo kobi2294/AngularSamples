@@ -1,3 +1,4 @@
+import { EmptyListsGuard } from './guards/empty-lists.guard';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ItemsComponent } from './components/items/items.component';
 import { ListEditorComponent } from './components/list-editor/list-editor.component';
@@ -11,7 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent}, 
-  {path: 'lists', component: ListsComponent}, 
+  {path: 'lists', component: ListsComponent, canActivate: [EmptyListsGuard]}, 
   {path: 'lists/:id', component: ListViewerComponent}, 
   {path: 'lists/:id/edit', component: ListEditorComponent}, 
   {path: 'items', component: ItemsComponent}, 
