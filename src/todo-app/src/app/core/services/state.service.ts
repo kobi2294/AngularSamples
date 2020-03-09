@@ -9,16 +9,42 @@ import { map } from 'rxjs/operators';
 })
 export class StateService {
   private lists: TodoList[] = [
-    // {
-    //   id: 1, 
-    //   caption:' Shopping', 
-    //   description: 'Things to buy on our next stop to the supermarket', 
-    //   icon: 'shopping_cart',
-    //   color: 'blue'
-    // }
+    {
+      id: 1, 
+      caption:'Shopping', 
+      description: 'Things to buy on our next stop to the supermarket', 
+      icon: 'shopping_cart',
+      color: 'blue'
+    }, 
+    {
+      id: 2, 
+      caption:' Work', 
+      description: 'Work related action items, development, design, and implementation', 
+      icon: 'work',
+      color: 'green'
+    }
   ];
-  private items: TodoItem[] = [];
-  private runningId: number = 0;
+  private items: TodoItem[] = [
+    {
+      id: 3, 
+      caption: 'Tomatos', 
+      isCompleted: false, 
+      listId: 1
+    }, 
+    {
+      id: 4, 
+      caption: 'Sugar', 
+      isCompleted: true, 
+      listId: 1
+    }, 
+    {
+      id: 5, 
+      caption: 'Milk', 
+      isCompleted: false, 
+      listId: 1
+    }, 
+  ];
+  private runningId: number = 6;
   
   private lists$ = new BehaviorSubject<TodoList[]>(this.lists);
   private items$ = new BehaviorSubject<TodoItem[]>(this.items);
