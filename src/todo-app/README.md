@@ -13,6 +13,17 @@ In this project we will practice all the topics we have learned. Specifically:
 * Building Components to consume the services
 * Using `@Input` and `@Output` in components 
 
+## Screen Shots
+<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/home-page.png" height="400">
+<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/items-page.png" height="400">
+<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-edit-color-select.png" height="400">
+<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-edit-icons-select.png" height="400">
+<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-edit-validation.png" height="400">
+<img src="" height="400">
+<img src="" height="400">
+<img src="" height="400">
+<img src="" height="400">
+
 ## Steps
 ### Step 1 - Data Models
 In this step we will divide the application into modules and create the data model that we will work with. 
