@@ -10,3 +10,11 @@
         </div>
     </div>
 </ng-container>
+<ng-container *ngIf="(items$ | async) as items">
+    <div class="items">
+        <app-todo-item-presenter *ngFor="let item of items"
+            [caption]="item.caption"
+            [isCompleted]="item.isCompleted"
+        ></app-todo-item-presenter>
+    </div>
+</ng-container>

@@ -10,6 +10,7 @@ import { ListViewerComponent } from './components/list-viewer/list-viewer.compon
 import { ListEditorComponent } from './components/list-editor/list-editor.component';
 import { ItemsComponent } from './components/items/items.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TodoItemPresenterComponent } from './components/todo-item-presenter/todo-item-presenter.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ListEditorComponent,
     ItemsComponent,
     NotFoundComponent,
+    TodoItemPresenterComponent,
   ],
   imports: [
     BrowserModule,
