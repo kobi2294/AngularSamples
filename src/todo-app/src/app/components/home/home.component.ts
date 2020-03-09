@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   application = 'Todos app';
   itemsCount$: Observable<number>;
   uncompletedCount$: Observable<number>;
+  listsCount$: Observable<number>;
 
   constructor(
     private state: StateService, 
@@ -28,10 +29,22 @@ export class HomeComponent implements OnInit {
     this.uncompletedCount$ = this.state.getAllItems().pipe(
       map(items => items.filter(i => !i.isCompleted).length)
     );
+    this.listsCount$ = this.state.getAllLists().pipe(
+      map(items => items.length)
+    )
+
   }
 
   navigateToNew() {
     this.router.navigate(['lists', -1, 'edit']);
+  }
+
+  navigateToLists() {
+    this.router.navigate(['lists']);
+  }
+
+  navigateToItems() {
+    this.router.navigate(['items']);
   }
 
 }
