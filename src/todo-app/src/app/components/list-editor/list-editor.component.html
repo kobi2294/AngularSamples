@@ -37,5 +37,5 @@
             <div *ngIf="errs['required'] as err">required</div>
         </div>
     </div>
-    <button (click)="save()" [disabled]="form.invalid || form.pristine" >Save</button>
+    <button class="primary" (click)="save()" [disabled]="form.invalid || form.pristine" >Save</button>
 </form>

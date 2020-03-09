@@ -45,6 +45,50 @@ header {
     color: white;
 }
 
+button.primary {
+    border-radius: 5px;
+    min-width: 100px;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid var(--p400);
+    background-color: var(--p100);
+    color: var(--p700);
+    cursor: pointer;
+    outline: transparent;
+}
+
+button.primary:disabled {
+    opacity: 0.3;
+    cursor: unset;
+}
+
+button.primary:enabled:hover {
+    background-color: var(--p400);
+    color: var(--p100);
+}
+
+button.accent {
+    border-radius: 5px;
+    min-width: 100px;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid var(--a400);
+    background-color: var(--a100);
+    color: var(--a700);
+    cursor: pointer;
+    outline: transparent;
+}
+
+button.accent:disabled {
+    opacity: 0.3;
+    cursor: unset;
+}
+
+button.accent:enabled:hover {
+    background-color: var(--a400);
+    color: var(--a100);
+}
+
 
 
 :root {
