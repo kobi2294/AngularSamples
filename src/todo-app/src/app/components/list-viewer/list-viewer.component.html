@@ -1,15 +1,12 @@
 <ng-container *ngIf="(list$ | async) as list">
-    <header [style.color]="list.color" >Lists > {{list.caption}}</header>
+    <header [style.color]="list.color">Lists > {{list.caption}}</header>
     <div class="meta-data">
         <p>{{list.description}}</p>
-        <span class="material-icons" 
-            [style.color]="list.color" >{{list.icon}}</span>
+        <span class="material-icons" [style.color]="list.color">{{list.icon}}</span>
+        <div class="buttons">
+            <button class="primary" (click)="createNewList()">New List...</button>
+            <button class="primary" (click)="editList()">Edit...</button>
+            <button class="accent" (click)="deleteList()">Delete</button>
+        </div>
     </div>
 </ng-container>
-
-<div class="buttons">
-    <button class="primary" (click)="createNewList()">New List...</button>
-    <button class="primary" (click)="editList()">Edit...</button>
-    <button class="accent" (click)="deleteList()">Delete</button>
-</div>
-

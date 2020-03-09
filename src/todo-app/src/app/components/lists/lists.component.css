@@ -18,37 +18,15 @@
     margin: 20px;
     padding: 8px;
     cursor: pointer;
-
-    position: relative;
-}
-
-.list-card.extra {
-    background-color: var(--p100);
-}
-
-.list-card:before, .list-card:after
-{
-  z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 12px;
-  left: 4px;
-  width: 50%;
-  top: 80%;
-  max-width:300px;
-  background: #777;
-  box-shadow: 0 15px 10px #777;
-  transform: rotate(-3deg);
-}
-.list-card:after
-{
-  transform: rotate(3deg);
-  right: 4px;
-  left: auto;
+    border: 1px solid rgb(214, 214, 214);
 }
 
 .list-card:hover {
     background-color: rgb(214, 214, 214);
+}
+
+.list-card.extra {
+    background-color: var(--p100);
 }
 
 .list-card.extra:hover {
