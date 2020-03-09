@@ -10,11 +10,19 @@
     margin: 10px;
 }
 
-p {
+.description {
     grid-column: 2;
     grid-row: 1;
     margin-left: 10px;
     font-size: 18px;
+}
+
+.confirm-caption {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 10px;
+    font-size: 24px;
+    color: var(--a400);
 }
 
 .material-icons {
@@ -33,6 +41,16 @@ p {
     flex-direction: row;
     margin: 4px;
 }
+
+.delete-confirm {
+    align-self: center;
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    margin: 4px;    
+}
+
 
 button {
     margin: 8px;

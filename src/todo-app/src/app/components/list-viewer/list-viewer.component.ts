@@ -16,6 +16,8 @@ export class ListViewerComponent implements OnInit {
   list$: Observable<TodoList>;
   items$: Observable<TodoItem[]>;
 
+  isConfirmingDelete: boolean = false;
+
   constructor(
     private state: StateService, 
     private router: Router, 
@@ -34,6 +36,14 @@ export class ListViewerComponent implements OnInit {
     this.items$ = this.listId$.pipe(
       switchMap(id => this.state.getItemsInList(id))
     )
+  }
+
+  confirmDelete() {
+    this.isConfirmingDelete = true;
+  }
+
+  cancelConfirmDelete() {
+    this.isConfirmingDelete = false;
   }
 
   async deleteList() {
