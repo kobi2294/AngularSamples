@@ -15,6 +15,7 @@
         <app-todo-item-presenter *ngFor="let item of items"
             [caption]="item.caption"
             [isCompleted]="item.isCompleted"
+            (completed)="markAsCompleted(item.id)"
         ></app-todo-item-presenter>
     </div>
 </ng-container>

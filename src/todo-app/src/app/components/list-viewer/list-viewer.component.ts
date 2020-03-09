@@ -51,4 +51,8 @@ export class ListViewerComponent implements OnInit {
     this.router.navigate(['lists', -1, 'edit']);
   }
 
+  async markAsCompleted(itemId: number) {
+    await this.state.markAsCompleted(itemId);
+  }
+
 }
