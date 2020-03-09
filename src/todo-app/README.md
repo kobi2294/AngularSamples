@@ -17,15 +17,21 @@ In this project we will practice all the topics we have learned. Specifically:
 ### Home Page
 <img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/home-page.png" height="400">
 
-### Home Page
-<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/items-page.png" height="400">
+### List Edit Page
 <img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-edit-color-select.png" height="400">
 <img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-edit-icons-select.png" height="400">
 <img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-edit-validation.png" height="400">
 <img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-edit.png" height="400">
+
+### Lists Page
+<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/lists-page.png" height="400">
+
+### List View Page
 <img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-view-delete-confirm.png" height="400">
 <img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/list-view.png" height="400">
-<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/lists-page.png" height="400">
+
+### Items Page
+<img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/items-page.png" height="400">
 
 ## Steps
 ### Step 1 - Data Models
