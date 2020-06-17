@@ -46,7 +46,7 @@ export class ListEditorComponent implements OnInit {
     this.form = this.fb.group({
       id: [-1], 
       caption: ['', Validators.required], 
-      description: ['', CoreValidators.counters(30, 10)], 
+      description: ['', CoreValidators.counters(30, 8)], 
       icon: ['', Validators.required], 
       color: ['', Validators.required]
     });
