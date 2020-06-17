@@ -13,6 +13,12 @@ In this project we will practice all the topics we have learned. Specifically:
 * Building Components to consume the services
 * Using `@Input` and `@Output` in components 
 
+## Nice to haves
+In the solution, I also take advantage of some cool tricks (these are of course, optional)
+* Using CSS variables to reuse colors in our application
+* Using an external package: `material-icons` to present cool icons
+* Using Some advanced CSS tricks to create fancy shadow effects
+
 ## Screen Shots
 ### Home Page
 <img src="https://github.com/kobi2294/AngularSamples/blob/master/src/todo-app/screenshots/home-page.png" height="400">
