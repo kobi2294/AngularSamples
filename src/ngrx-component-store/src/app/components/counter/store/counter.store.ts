@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { ComponentStore } from "@ngrx/component-store";
+import { tap } from "rxjs/operators";
 import { CounterState, initialCounterState } from "./counter.state";
 
 @Injectable()
@@ -20,4 +21,8 @@ export class CounterStore extends ComponentStore<CounterState> {
         ...state, 
         ...newState
     }));
+
+    readonly longSetEffect = this.effect<string>(origin$ => origin$.pipe(
+        tap(val => console.log(val))
+    ));
 }

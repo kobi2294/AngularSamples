@@ -1,6 +1,5 @@
-import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { CounterStore } from './store/counter.store';
 
 @Component({
@@ -16,9 +15,13 @@ export class CounterComponent implements OnInit {
   constructor(public store: CounterStore) { }
 
   valueInput$ = new Subject<number>();
+  textInput$ = new Subject<string>();
+
+  sub = new Subscription();
 
   ngOnInit(): void {
     this.store.setValue(this.valueInput$);
+    this.sub.add(this.store.longSetEffect(this.textInput$));
   }
 
   setStateValue() {
@@ -36,6 +39,15 @@ export class CounterComponent implements OnInit {
   callUpdater() {
     this.store.setValue(42);
     this.store.setAllValues({value: 42});
+  }
+
+  callEffect() {
+    const sub1 = this.store.longSetEffect('hello');
+    console.log(sub1);
+  }
+
+  unsubscribeEffect() {
+    this.sub.unsubscribe();
   }
 
 }

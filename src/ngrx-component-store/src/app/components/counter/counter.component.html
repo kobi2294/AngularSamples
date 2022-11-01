@@ -7,7 +7,10 @@
     {{store.isActive$ | async}}
 </pre>
 <input #myNum type="number" (input)="valueInput$.next(myNum.valueAsNumber)">
+<input #myStr type="text" (input)="textInput$.next(myStr.value)">
 
 <button (click)="setStateValue()">setState(value)</button>
 <button (click)="setStateUpdater()">setState(updater)</button>
 <button (click)="callUpdater()">callUpdater</button>
+<button (click)="callEffect()">callEffect</button>
+<button (click)="unsubscribeEffect()">unsubscribe effect</button>
