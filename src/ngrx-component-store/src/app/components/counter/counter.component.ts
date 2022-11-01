@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentRef, OnInit, ViewRef } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { CounterStore } from './store/counter.store';
 
@@ -22,6 +22,14 @@ export class CounterComponent implements OnInit {
   ngOnInit(): void {
     this.store.setValue(this.valueInput$);
     this.sub.add(this.store.longSetEffect(this.textInput$));
+
+    this.whatDoIDo('b');
+  }
+
+  whatDoIDo(k: 'a' | 'b' | 'c') {
+    const obj = {a: 2, b: 3, c: 4};
+    const {[k]:x, ...res} = obj;
+    console.log(res);
   }
 
   setStateValue() {
