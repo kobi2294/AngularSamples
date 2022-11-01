@@ -1,1 +1,13 @@
-<p>counter works!</p>
+<h1>value</h1>
+<pre>
+    {{store.value$ | async }}
+</pre>
+<h1>isActive</h1>
+<pre>
+    {{store.isActive$ | async}}
+</pre>
+<input #myNum type="number" (input)="valueInput$.next(myNum.valueAsNumber)">
+
+<button (click)="setStateValue()">setState(value)</button>
+<button (click)="setStateUpdater()">setState(updater)</button>
+<button (click)="callUpdater()">callUpdater</button>

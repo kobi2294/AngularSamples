@@ -7,4 +7,17 @@ export class CounterStore extends ComponentStore<CounterState> {
     constructor() {
         super(initialCounterState);
     }
+
+    value$ = this.select(state => state.value);
+    isActive$ = this.select(state => state.isActive);
+
+    readonly setValue = this.updater((state, val: number) => ({
+        ...state, 
+        value: val
+    }));
+
+    readonly setAllValues = this.updater((state, newState: Partial<CounterState>) => ({
+        ...state, 
+        ...newState
+    }));
 }
