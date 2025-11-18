@@ -1,0 +1,11 @@
+<div class="header">
+    {{title()}}
+</div>
+<mat-tab-group>
+    <mat-tab label="reactive form" bodyClass="tab-body">
+        <ng-content select="[reactive]"/>
+    </mat-tab>
+    <mat-tab label="signal form" bodyClass="tab-body">
+        <ng-content select="[signal]"/>
+    </mat-tab>
+</mat-tab-group>

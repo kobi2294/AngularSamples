@@ -30,6 +30,7 @@
 
   ::ng-deep *:nth-child(3) {
     flex-grow: 1;
-    padding: 16px;
+    margin: 16px;
+    position: relative;
   }
 }
