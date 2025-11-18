@@ -18,8 +18,8 @@
       }
 
       &.selected {
-        background-color: var(--mat-sys-secondary);
-        color: var(--mat-sys-on-secondary);
+        background-color: var(--mat-sys-primary-fixed-dim);
+        color: var(--mat-sys-on-primary-fixed);
       }
     }
   }
