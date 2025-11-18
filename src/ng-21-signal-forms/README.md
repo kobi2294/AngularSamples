@@ -6,4 +6,5 @@
 * Displaying error messages and validation status
 * Creating custom validation
 * Creating conditional validation
-* Creating composed validation
+* Creating composed validation - on multiple fields
+* 
