@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SharedModule } from '../../../shared.module';
+import { Rating } from '../../../models/rating.model';
 
 @Component({
   selector: 'app-d1-reactive',
@@ -14,10 +15,15 @@ export class D1Reactive {
       nonNullable: true,
       validators: Validators.required,
     }),
-    rating: new FormControl(3, {
-      nonNullable: true,
-      validators: [Validators.required, Validators.min(1), Validators.max(5)],
+    rating: new FormControl<Rating>(
+      'Okay', {
+      nonNullable: true,      
+      validators: [Validators.required],
     }),
     comeAgain: new FormControl(false, { nonNullable: true }),
   });
+
+  onSubmit() {
+    console.log(this.form.value);
+  }
 }
