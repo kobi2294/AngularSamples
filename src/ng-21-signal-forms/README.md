@@ -4,4 +4,6 @@
 * Creating a simple form
 * Validation with signal forms
 * Displaying error messages and validation status
-* 
+* Creating custom validation
+* Creating conditional validation
+* Creating composed validation

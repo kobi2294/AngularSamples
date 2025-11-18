@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { Field } from "@angular/forms/signals";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
@@ -10,7 +11,8 @@ const exportables = [
     ReactiveFormsModule, 
     MatFormFieldModule, 
     MatInputModule, 
-    MatSelectModule
+    MatSelectModule, 
+    Field
 ]
 
 @NgModule({

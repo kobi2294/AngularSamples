@@ -1,1 +1,35 @@
-<p>d2-reactive works!</p>
+<div class="form">
+  <div class="form-header">How was your lunch?</div>
+  <div class="field">
+    @let foodCtrl = form.controls.food;
+    <label>What did you eat?</label>
+    <input type="text" [formControl]="foodCtrl" />
+    @if(foodCtrl.invalid && foodCtrl.touched) {
+        @if(foodCtrl.errors!['required']) {
+            <div class="err">Please enter what you ate.</div>
+        }
+        @if(foodCtrl.errors!['capital']) {
+            <div class="err">The first letter must be capital</div>
+        }
+    }
+  </div>
+  <div class="field">
+    @let ratingCtrl = form.controls.rating;
+    <label>How was it?</label>
+    <select [formControl]="ratingCtrl">
+      <option value="Great">Great</option>
+      <option value="Good">Good</option>
+      <option value="Okay">Okay</option>
+      <option value="Bad">Bad</option>
+      <option value="Terrible">Terrible</option>
+    </select>
+  </div>
+
+  <div class="field">
+    @let comeAgainCtrl = form.controls.comeAgain;
+    <label>I would eat here again</label>
+    <input type="checkbox" [formControl]="comeAgainCtrl" />
+  </div>
+
+    <button [disabled]="form.invalid" (click)="onSubmit()">Submit</button>
+</div>
