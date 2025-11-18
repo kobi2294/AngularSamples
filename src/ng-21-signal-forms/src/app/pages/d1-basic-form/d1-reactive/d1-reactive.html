@@ -1,1 +1,32 @@
-<p>d1-reactive works!</p>
+<div class="form">
+  <div class="form-header">How was your lunch?</div>
+  <div class="field">
+    @let foodCtrl = form.controls.food;
+    <label>What did you eat?</label>
+    <input type="text" [formControl]="foodCtrl" />
+    @if(foodCtrl.invalid && foodCtrl.touched) {
+        @if(foodCtrl.errors!['required']) {
+            <div class="err">Please enter what you ate.</div>
+        }
+    }
+  </div>
+  <div class="field">
+    @let ratingCtrl = form.controls.rating;
+    <label>How was it?</label>
+    <select [formControl]="ratingCtrl">
+      <option value="5">Great</option>
+      <option value="4">Good</option>
+      <option value="3">Okay</option>
+      <option value="2">Bad</option>
+      <option value="1">Terrible</option>
+    </select>
+  </div>
+
+  <div class="field">
+    @let comeAgainCtrl = form.controls.comeAgain;
+    <label>I would eat here again</label>
+    <input type="checkbox" [formControl]="comeAgainCtrl" />
+  </div>
+
+    <button [disabled]="form.invalid">Submit</button>
+</div>

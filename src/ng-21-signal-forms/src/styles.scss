@@ -46,3 +46,100 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.form-header {
+  margin: 16px 0;
+  align-self: center;
+  font: var(--mat-sys-headline-medium);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 360px;
+  padding: 16px;
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--mat-sys-on-primary-container);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"], 
+input[type="number"], 
+input[type="search"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  &:focus {
+    border-color: var(--mat-sys-primary);
+    outline: none;
+    box-shadow: 0 0 4px rgba(63, 81, 181, 0.5);
+  }
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  &:focus {
+    border-color: var(--mat-sys-primary);
+    outline: none;
+    box-shadow: 0 0 4px rgba(63, 81, 181, 0.5);
+  }
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+// .field with input checkbox inside should have flex-direction row
+.field:has(input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  input[type="checkbox"] {
+    order: -1;
+  }
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--mat-sys-primary), var(--mat-sys-on-surface) 50%);
+  }
+
+  &:disabled {
+    background-color: color-mix(in srgb, var(--mat-sys-primary), transparent 70%);
+    cursor: not-allowed;
+  }
+}
+
+.err {
+  color: var(--mat-sys-error);
+}

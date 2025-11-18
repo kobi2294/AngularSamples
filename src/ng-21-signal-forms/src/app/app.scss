@@ -28,7 +28,7 @@
     display: none;
   }
 
-  ::ng-deep *:nth-child(3) {
+  ::ng-deep > *:nth-child(3) {
     flex-grow: 1;
     margin: 16px;
     position: relative;
