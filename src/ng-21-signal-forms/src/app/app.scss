@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mat-sys-primary-container);
+    padding: 16px 0px;
+
+    a {
+      text-decoration: none;
+      color: var(--mat-sys-on-primary-container);
+      padding: 8px 16px;
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.selected {
+        background-color: var(--mat-sys-secondary);
+        color: var(--mat-sys-on-secondary);
+      }
+    }
+  }
+
+  router-outlet {
+    display: none;
+  }
+
+  ::ng-deep *:nth-child(3) {
+    flex-grow: 1;
+    padding: 16px;
+  }
+}
