@@ -1,5 +1,5 @@
 import { Component, computed, effect, signal } from '@angular/core';
-import { aggregateMetadata, createMetadataKey, customError, form, MAX, max, maxMetadataKey, metadata, MIN, min, minMetadataKey, orMetadataKey, REQUIRED, required, SchemaPath, validate, validateAsync } from '@angular/forms/signals';
+import { aggregateMetadata, createMetadataKey, customError, form, MAX, max, maxMetadataKey, metadata, MIN, min, minMetadataKey, orMetadataKey, REQUIRED, required, SchemaPath, validate, validateAsync, validateStandardSchema } from '@angular/forms/signals';
 import { DinerNumerticRating, DinerRating, RATINGS } from '../../../models/rating.model';
 import { SharedModule } from '../../../shared.module';
 import { rxResource } from '@angular/core/rxjs-interop';
@@ -25,16 +25,7 @@ export class D3Signal {
     required(p.food, { message: 'Food is required'});   
     min(p.rating, 1, { message: 'Rating must be at least 1' });
     max(p.rating, 10, { message: 'Rating cannot be more than 10' });
-    validateAsync(p.food, {
-      params: ctx => ctx.valueOf(p.comeAgain), 
-      factory: prms => rxResource({
-        params: prms,
-        stream: () => of(10)
-      }), 
-      onError: () => {}, 
-      onSuccess: () => {}
-    }), 
-    skipped(p.rating, 2);
+    skipped(p.rating, 2);    
   });
 
   readonly ratingOptions = RATINGS;
