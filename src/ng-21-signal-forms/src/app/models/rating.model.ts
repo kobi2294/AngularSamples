@@ -6,3 +6,9 @@ export interface DinerRating {
   readonly rating: Rating;
   readonly comeAgain: boolean;
 }
+
+export interface DinerNumerticRating {
+  readonly food: string;
+  readonly rating: number; // 1 to 5
+  readonly comeAgain: boolean;
+}

@@ -1,0 +1,29 @@
+<div class="form">
+  <div class="form-header">How was your lunch?</div>
+  <div class="field">
+    @let foodCtrl = dinnerForm.food;
+    <label> @if(foodCtrl().required()) { * } What did you eat?</label>
+    <input type="text" [field]="foodCtrl" />
+    @if(foodCtrl().invalid() && foodCtrl().touched()) { @for(err of foodCtrl().errors(); track err)
+    {
+    <div class="err">{{ err.message }}</div>
+    } }
+  </div>
+  <div class="field">
+    @let ratingCtrl = dinnerForm.rating;
+    <label>How was it?</label>
+    <input type="range" [field]="ratingCtrl" />
+    @if(ratingCtrl().invalid() && ratingCtrl().touched()) { @for(err of ratingCtrl().errors(); track err)
+    {
+    <div class="err">{{ err.message }}</div>
+    } }
+  </div>
+
+  <div class="field">
+    @let comeAgainCtrl = dinnerForm.comeAgain;
+    <label>I would eat here again</label>
+    <input type="checkbox" [field]="comeAgainCtrl" />
+  </div>
+
+  <button [disabled]="dinnerForm().invalid()">Submit</button>
+</div>
