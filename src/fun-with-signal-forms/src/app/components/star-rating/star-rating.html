@@ -1,0 +1,9 @@
+@for(i of stars(); track i) {
+    <mat-icon (click)="value.set(i)">
+        @if(i <= value()) {
+            star
+        } @else {
+            star_outline
+        }
+    </mat-icon>
+}

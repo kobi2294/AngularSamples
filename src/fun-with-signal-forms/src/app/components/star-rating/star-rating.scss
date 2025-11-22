@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+
+    mat-icon {
+        cursor: pointer;
+        color: goldenrod;
+    }
+}
